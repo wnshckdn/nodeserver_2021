@@ -14,7 +14,7 @@ function start(route, handle) {
 
     server = http.createServer(onRequset);
     server.listen(port, hostname);
-    console.log('Server is running at' + baseUrl);
+    console.log('Server is running at ' + baseUrl);
 }
 
 exports.start = start;

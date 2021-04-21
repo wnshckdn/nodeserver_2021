@@ -1,3 +1,3 @@
 git add --all
-git commit -m "make MyHandler.js"
+git commit -m "[bug] MyRouter body clear"
 git push -u origin master
