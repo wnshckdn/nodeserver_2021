@@ -1,3 +1,3 @@
 git add --all
-git commit -m "[bug] baseUrl: 'http:// + hostname + ':' + 8000 => 'http://' + hostname + ':' + port"
+git commit -m "make MyHandler.js"
 git push -u origin master
