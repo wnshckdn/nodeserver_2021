@@ -1,19 +1,19 @@
 const http = require('http');
-
-const hostname = 'localhost';
+const hostname = "localhost";
 const port = 8000;
-const baseUrl = "http://" + hostname + ':' + 8000;
+const baseUrl = 'http://' + hostname + ':' + port;
 
 function start() {
-    function onRequest(req, res) {
-        res.writeHead(200, { 'content-Type': 'test/html' });
-        res.write('Hello, world!');
+    function onRequset(req, res) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write("Hello,world!");
         res.end();
     }
 
-    server = http.createServer(onRequest);
+    server = http.createServer(onRequset);
     server.listen(port, hostname);
-    console.log('Server is running at ' + baseUrl);
+    console.log('Server is running at' + baseUrl);
 }
+
 
 exports.start = start;
