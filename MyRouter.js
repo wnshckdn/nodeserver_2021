@@ -1,7 +1,7 @@
 const fs = require('fs');
 const myHandler = require('./MyHandler');
 
-function route(pathname, handle, res) {
+function route(pathname, handle, res, postData) {
     console.log('Routing request for ' + pathname);
     if (typeof handle[pathname] === 'function') {
         handle[pathname](res);
