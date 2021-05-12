@@ -1,3 +1,3 @@
 git add --all
-git commit -m "add nickname page Handling form post"
+git commit -m "add people page reading people.json"
 git push -u origin master

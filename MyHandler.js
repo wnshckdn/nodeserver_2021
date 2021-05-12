@@ -13,6 +13,7 @@ function start(res) {
     body += '<div><a href="/serverInfo">Server 정보를 표시하는 페이지</a></div>'
     body += '<div><a href="/form">Form 입력 페이지</a></div>'
     body += '<div><a href="/nickname">Form으로 넘어온 이름과 별명 표시 페이지</a></div>'
+    body += '<div><a href="/people">JSON을 입력받아서 회원정보 표시 페이지</a></div>'
     body += '</body>'
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write(body);
@@ -78,6 +79,15 @@ function nickname(res, postData) {
     res.end();
 }
 
+function people(res) {
+    str = fs.readFileSync('people.json', 'utf-8');
+    obj = JSON.parse(str);
+    console.log(obj.name + ':' + obj.house);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.write(boj);
+    res.end();
+}
+
 exports.start = start;
 exports.hello = hello;
 exports.wait = wait;
@@ -85,3 +95,4 @@ exports.randomWait = randomWait;
 exports.firstHtml = firstHtml;
 exports.htmlFile = htmlFile;
 exports.serverInfo = serverInfo;
+exports.nickname = nickname;
