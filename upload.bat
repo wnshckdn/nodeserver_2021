@@ -1,3 +1,3 @@
 git add --all
-git commit -m "[bug] MyRouter body clear"
+git commit -m "add wait page"
 git push -u origin master
