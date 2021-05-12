@@ -4,12 +4,12 @@ const os = require('os');
 function start(res) {
     let body = '<head><meta charset="UTF-8"/></head>';
     body += '<body><div>Hello world!<br>I am in the cloud class<br></div>'
-    body += '<div><a href="hello">hello 페이지</a></div>'
-    body += '<div><a href="wait">5초 대기 페이지</a></div>'
-    body += '<div><a href="randomWait">무작위 대기 페이지</a></div>'
-    body += '<div><a href="firstHtml">HTML 읽는 페이지</a></div>'
-    body += '<div><a href="page">handler 없이 "/page" 매핑하는 페이지</a></div>'
-    body += '<div><a href="serverInfo">Server 정보를 표시하는 페이지</a></div>'
+    body += '<div><a href="/hello">hello 페이지</a></div>'
+    body += '<div><a href="/wait">5초 대기 페이지</a></div>'
+    body += '<div><a href="/randomWait">무작위 대기 페이지</a></div>'
+    body += '<div><a href="/firstHtml">HTML 읽는 페이지</a></div>'
+    body += '<div><a href="/page">Handler 없이 "/page"로 매핑하는 페이지</a></div>'
+    body += '<div><a href="/serverInfo">Server 정보를 표시하는 페이지</a></div>'
     body += '</body>'
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.write(body);
@@ -58,10 +58,10 @@ function firstHtml(res) {
 }
 
 function serverInfo(res) {
-    info = Json.stringify(os.cpus());
+    info = JSON.stringify(os.cpus());
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write(body);
+    res.write(info);
     res.end();
 }
 
